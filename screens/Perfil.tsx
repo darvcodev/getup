@@ -3,25 +3,51 @@ import React from "react";
 import { View, StyleSheet, Pressable, ScrollView } from "react-native";
 import { DonutChart } from "react-native-circular-chart";
 
-const DATA = [
-  {
-    name: "Hábito 1",
-    value: 82,
-    color: "#614D9E",
-  },
-];
+export const Perfil: React.FC = ({ navigation }: { navigation: any }) => {
 
-export const Perfil: React.FC = () => {
+  const DATA = [
+    {
+      name: "Hábito 1",
+      value: 82,
+      color: "#614D9E",
+    },
+  ];
+
   return (
     <>
       <ProfileCard nombre="Carlos Castro" email="carlos@gmail.com" />
+      <Text style={{ fontSize: 20, fontWeight: "bold", padding: 10 }}>
+        {" "}
+        Hábitos{" "}
+      </Text>
+      <View style={styles.sectionWrapper}>
+        <DonutChart
+          data={DATA}
+          strokeWidth={15}
+          radius={90}
+          containerWidth={150 * 2}
+          containerHeight={150 * 2}
+          type="round"
+          startAngle={50}
+          endAngle={360}
+          animationType="slide"
+        />
+      </View>
+      {/* crear un <hr /> */}
+      <View style={styles.hr} />
+      <Pressable style={styles.button} onPress={() => navigation.navigate("Login")}>
+        <Text style={styles.text}>Iniciar Sesión</Text>
+      </Pressable>
+      <Pressable style={styles.button} onPress={() => navigation.navigate("Register")}>
+        <Text style={styles.text}>Registrarse</Text>
+      </Pressable>
     </>
   );
 };
 
 function ProfileCard({ nombre, email }: { nombre: string; email: string }) {
   return (
-    <ScrollView style={styles.container}>
+    <ScrollView>
       <Card containerStyle={{ borderRadius: 20, padding: 10 }}>
         <View style={{ flexDirection: "row" }}>
           <View
@@ -47,41 +73,11 @@ function ProfileCard({ nombre, email }: { nombre: string; email: string }) {
           <Text style={styles.text}>Actualizar plan</Text>
         </Pressable>
       </Card>
-
-      <Text style={{ fontSize: 20, fontWeight: "bold", padding: 10 }}>
-        {" "}
-        Hábitos{" "}
-      </Text>
-      <View style={styles.sectionWrapper}>
-        <DonutChart
-          data={DATA}
-          strokeWidth={15}
-          radius={90}
-          containerWidth={150 * 2}
-          containerHeight={150 * 2}
-          type="round"
-          startAngle={50}
-          endAngle={360}
-          animationType="slide"
-        />
-      </View>
-      {/* crear un <hr /> */}
-      <View style={styles.hr} />
-      <Pressable style={styles.button} onPress={() => {}}>
-        <Text style={styles.text}>Cerrar Sesión</Text>
-      </Pressable>
-      <Pressable style={styles.button} onPress={() => {}}>
-        <Text style={styles.text}>Registrarse</Text>
-      </Pressable>
     </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-  },
   sectionWrapper: {
     justifyContent: "center",
     alignItems: "center",
