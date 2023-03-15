@@ -1,7 +1,6 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet} from 'react-native';
 import { Platform } from 'react-native';
-import { Button, lightColors, createTheme, ThemeProvider } from '@rneui/themed';
+import { lightColors, createTheme, ThemeProvider } from '@rneui/themed';
 import { TabNavigator } from './Navigation';
 import { NavigationContainer } from '@react-navigation/native';
 
@@ -30,5 +29,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+    color: '#614D9E',
   },
 });

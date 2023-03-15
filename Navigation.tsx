@@ -48,7 +48,7 @@ export function TabNavigator() {
           )
         }}
       />
-      <Tab.Screen name="Perfila" component={PerfilStack}
+      <Tab.Screen name="Perfil" component={PerfilStack}
         options={{
           tabBarIcon: ({ color, size }) => (
             <Icon name="user" type="font-awesome" color={color} size={size} />
