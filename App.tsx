@@ -20,6 +20,8 @@ const theme = createTheme({
       default: lightColors.platform.android,
       ios: lightColors.platform.ios,
     }),
+    primary: '#614D9E',
+    secondary: '#F2F2F2',
   },
 });
 

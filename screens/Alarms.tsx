@@ -22,17 +22,18 @@ function AlarmCard({ title, time, when, icon }: { title: string, time: string, w
     <View style={{ flexDirection: "row" }}>
       <View style={{ width: '20%', alignItems: "center", justifyContent: "center" }}>
         <Icon
+          color="#614D9E"
           size={50}
           name={icon || "alarm"}
         />
       </View>
       { /* Make the title aligned to the bottom */}
       <View style={{ width: '60%', alignItems: "center", justifyContent: "flex-end", flex: 1 }}>
-        <Card.Title h4>{title}</Card.Title>
+        <Card.Title style={{color: '#614D9E'}} h4>{title}</Card.Title>
       </View>
       <View style={{ width: '20%', alignItems: "flex-end" }}>
-        <Text h4>{time}</Text>
-        <Switch style={{ width: '20%' }} />
+        <Text style={{color: '#614D9E'}} h4>{time}</Text>
+        <Switch color='#614D9E' style={{ width: '20%' }} />
       </View>
     </View>
     <Card.Divider />
@@ -40,7 +41,7 @@ function AlarmCard({ title, time, when, icon }: { title: string, time: string, w
       <View style={{ width: '10%' }}>
       </View>
       <View style={{ width: '80%', alignItems: "center" }}>
-        <Text>{when}</Text>
+        <Text style={{color: '#614D9E'}}>{when}</Text>
       </View>
       <View style={{ alignItems: "center", width: '10%' }}>
         <Icon
@@ -56,6 +57,6 @@ function AlarmCard({ title, time, when, icon }: { title: string, time: string, w
 
 export function AlarmCreation() {
   return <View>
-    <Text h1>Alarm Creation</Text>
+    <Text style={{color: '#614D9E'}} h1>Alarm Creation</Text>
   </View>
 }
